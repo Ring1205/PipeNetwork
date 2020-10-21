@@ -1,0 +1,95 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/colorPrimary</item>
+        <item name="styleLoadingLayout">@style/LoadingLayoutStyle</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationStyle</item>
+    </style>
+    <!--标题栏返回按钮样式 缩小返回键与标题间距-->
+    <style name="ToolbarNavigationStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">16dp</item>
+    </style>
+
+    <style name="Toolbar_ThemeColor">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimaryDark</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="titleTextAppearance">@style/Toolbar_ThemeColor</item>
+    </style>
+
+    <!-- 自定义仿IOS的AlertDialog的样式 -->
+    <style name="AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
+        <item name="llEmptyImage">@drawable/ic_empty</item> <!-- 数据为空 -->
+        <item name="llErrorImage">@drawable/ic_error</item> <!-- 加载失败 -->
+        <!--<item name="llLoadingResId">@layout/common_loading</item>--> <!-- 加载中动画 -->
+    </style>
+
+    <attr name="styleLoadingLayout" format="reference" />
+    <declare-styleable name="LoadingLayout">
+        <attr name="llEmptyResId" format="reference" />
+        <attr name="llLoadingResId" format="reference" />
+        <attr name="llErrorResId" format="reference" />
+        <attr name="llEmptyImage" format="reference" />
+        <attr name="llEmptyText" format="string" />
+        <attr name="llErrorImage" format="reference" />
+        <attr name="llErrorText" format="string" />
+        <attr name="llRetryText" format="string" />
+        <attr name="llTextColor" format="color" />
+        <attr name="llTextSize" format="dimension" />
+        <attr name="llButtonTextColor" format="color" />
+        <attr name="llButtonTextSize" format="dimension" />
+        <attr name="llButtonBackground" format="reference" />
+    </declare-styleable>
+    <item name="empty_image" type="id" />
+    <item name="empty_text" type="id" />
+    <item name="error_image" type="id" />
+    <item name="error_text" type="id" />
+    <item name="retry_button" type="id" />
+
+    <style name="LoadingLayout"></style>
+
+    <style name="LoadingLayout.Style">
+        <item name="llEmptyResId">@layout/_loading_layout_empty</item>
+        <item name="llLoadingResId">@layout/_loading_layout_loading</item>
+        <item name="llErrorResId">@layout/_loading_layout_error</item>
+
+        <item name="llTextColor">#999999</item>
+        <item name="llTextSize">16sp</item>
+
+        <item name="llButtonTextColor">#999999</item>
+        <item name="llButtonTextSize">16sp</item>
+        <item name="llButtonBackground">@drawable/_loading_layout_button</item>
+
+        <item name="llEmptyImage">@null</item>
+        <item name="llEmptyText">暂无数据</item>
+        <item name="llErrorImage">@null</item>
+        <item name="llErrorText">无网络连接，请检查您的网络...</item>
+        <item name="llRetryText">加载失败，点击重试~~</item>
+    </style>
+</resources>

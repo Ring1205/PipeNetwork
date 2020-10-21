@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.zxycloud.pipework"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // fragmentation框架使用说明书：https://github.com/xuantiandaozun/fragmentation-androidx
+    // 如果不想继承SupportActivity/Fragment，自己定制Support，可仅依赖:
+    // api 'me.yokeyword:fragmentation-core:1.3.8'
+    // 如果想使用SwipeBack 滑动边缘退出Fragment/Activity功能，完整的添加规则如下：
+    api 'me.yokeyword:fragmentationx:1.0.1'
+    // swipeback基于fragmentation, 如果是自定制SupportActivity/Fragment，则参照SwipeBackActivity/Fragment实现即可
+    api 'me.yokeyword:fragmentation-swipeback:1.3.8'
+    // Activity作用域的EventBus，更安全，可有效避免after onSavenInstanceState()异常
+    api 'me.yokeyword:eventbus-activity-scope:1.1.0'
+    // Your EventBus's version
+    api 'org.greenrobot:eventbus:3.1.1'
+
+    // 下拉刷新与上拉加载更多 说明书：https://github.com/scwang90/SmartRefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-20'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
+
+    api 'com.android.support:multidex:1.0.3'//突破65535 限制
+    //安卓组件包
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'io.reactivex.rxjava2:rxjava:2.1.12'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.google.code.gson:gson:2.8.2'
+    api 'com.squareup.okhttp3:okhttp-urlconnection:3.11.0'
+    api 'com.github.bumptech.glide:glide:4.6.1'
+
+}

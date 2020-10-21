@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Pipe Network</string>
+
+    <string name="press_again_exit">再按一次退出</string>
+    <string name="dynamic_time_format">更新于 %s</string>
+
+    <string-array name="weeks_time_array">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+    <string-array name="moments_time_array">
+        <item>中午</item>
+        <item>凌晨</item>
+        <item>早上</item>
+        <item>下午</item>
+        <item>晚上</item>
+    </string-array>
+</resources>
