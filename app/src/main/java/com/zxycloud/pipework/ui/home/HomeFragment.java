@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
+import com.zxycloud.pipework.R;
 import com.zxycloud.pipework.base.main.BaseMainFragment;
 import com.zxycloud.pipework.databinding.FragmentHomeBinding;
 
@@ -21,7 +23,7 @@ public class HomeFragment extends BaseMainFragment<FragmentHomeBinding, HomeView
 
     @Override
     protected FragmentHomeBinding getBinding(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return FragmentHomeBinding.inflate(getLayoutInflater());
+        return FragmentHomeBinding.inflate(inflater,container,false);
     }
 
     @Override

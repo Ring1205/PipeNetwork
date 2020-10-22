@@ -1,4 +1,4 @@
-package com.zxycloud.pipework.base;
+package com.zxycloud.pipework.base.fragment;
 
 import android.text.TextUtils;
 import android.view.Menu;
@@ -9,6 +9,7 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.widget.Toolbar;
 
 import com.zxycloud.pipework.R;
+import com.zxycloud.pipework.base.BaseModel;
 import com.zxycloud.pipework.base.fragment.BaseFragment;
 import com.zxycloud.pipework.databinding.ToolbarBinding;
 import com.zxycloud.pipework.event.type.ShakeType;
